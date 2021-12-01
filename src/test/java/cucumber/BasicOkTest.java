@@ -21,16 +21,16 @@ import io.cucumber.junit.CucumberOptions;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(
-    features = "src/test/java/cucumber/features/",
+    features = "src/test/java/cucumber/features/basicOk.feature",
     plugin = {
         "pretty",
         "html:target/cucumber.html",
         "json:target/cucumber.json"
     }
 )
-public class RunCucumberTest {
+public class BasicOkTest {
     
-    public RunCucumberTest() {
+    public BasicOkTest() {
     }
     
     @BeforeClass

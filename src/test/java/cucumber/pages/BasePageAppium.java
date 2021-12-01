@@ -32,21 +32,22 @@ public class BasePageAppium {
         String appiumON = "S";
 //        String appiumON = System.getProperty("appiumON");
         String device = System.getProperty("device");
-        System.out.println("AppiumOn: " + appiumON);
+        //System.out.println("AppiumOn: " + appiumON);
         // Generación de las capabilites a nivel del servicio de Appium
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
 
         // Generación de las capabilites a nivel de driver
         DesiredCapabilities clientCapabilities = new DesiredCapabilities();
-        clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
+        //clientCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         //clientCapabilities.setCapability(MobileCapabilityType.PLATFORM, "Android");
 
-        clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
-        clientCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
+        //clientCapabilities.setCapability(MobileCapabilityType.UDID, device);
+        //clientCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
         try {
             if (appiumON.equals("S")) {
                 URL url_appium = new URL("http://" + loadproperty.loadProperties().getProperty("AppiumServerIP") + ":"
+                        //+ loadproperty.loadProperties().getProperty("AppiumServerPort"));
                         + loadproperty.loadProperties().getProperty("AppiumServerPort") + "/wd/hub");
                 System.out.println(url_appium);
                 driver = new AndroidDriver(url_appium, clientCapabilities);
